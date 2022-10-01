@@ -19,6 +19,7 @@ else
 }
 Console.WriteLine("max number = " + max);
 Console.WriteLine("min number = " + min);
+
 */
 
 /* Задача№2 Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
@@ -31,16 +32,25 @@ Console.Write("Input the third number: ");
 int n3 = Convert.ToInt32(Console.ReadLine());
 int max = n1;
 
-if (n1 < n2)
+if (n2 > n1)
 {
     max = n2;
 }
+
 if (n2 < n3)
 {
     max = n3;
 }
+
+if (n1 > n3)
+{
+    max = n1;
+}
+
 Console.Write("Maximal number is: " + max);
+
 */
+
 
 
 /* Задача№3 Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
@@ -59,7 +69,7 @@ else
 
 */
 
-// Задача№4 Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+/* Задача№4 Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
 
 
 Console.Write("Write a positive number: ");
@@ -81,3 +91,5 @@ else
 {
     Console.Write("!!!You entered a negative number!!!");
 }
+
+*/
