@@ -43,7 +43,7 @@ Console.Write("Maximal number is: " + max);
 */
 
 
-// Задача№3 Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
+/* Задача№3 Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 
 Console.Write("Input first number: ");
 int num = Convert.ToInt32(Console.ReadLine());
@@ -57,4 +57,27 @@ else
     Console.WriteLine("This number is even: " + num);
 }
 
+*/
 
+// Задача№4 Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+
+
+Console.Write("Write a positive number: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int i = 1;
+
+if (n > 0)
+{    
+    while (i < n)
+    {
+        if (i % 2 == 0)
+        {
+            Console.Write(", " + i);
+        } 
+        i++;
+    }
+}
+else
+{
+    Console.Write("!!!You entered a negative number!!!");
+}
