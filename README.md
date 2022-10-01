@@ -1,0 +1,1 @@
+This repository contains homework given by the GeekBrains school. The best private school in the CIS! ;)
