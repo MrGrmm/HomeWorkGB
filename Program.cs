@@ -95,4 +95,57 @@ else
 
 //Семинар 2
 
-// Задача№1 Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+/* Задача№1 Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+
+int FindSecondDigitOfThree(int num)
+{   
+    int sec;
+
+    int ed = num / 10;
+    sec = ed % 10;
+
+    return sec; 
+}
+
+Console.WriteLine("Tape a three-digit number ");
+int number = Convert.ToInt32(Console.ReadLine());
+if (number % 1000 == number && number / 100 != 0)
+{
+    int second = FindSecondDigitOfThree(number);
+    Console.WriteLine($"A second digit is: " + second);
+}
+else
+{
+    Console.WriteLine("The number you entered is not three digits: " + number ); 
+}
+
+*/
+
+//Задача №2 Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
+
+
+// Задача №3 Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+
+int FindAHoliday(int num)
+{
+  int weekend = 6 & 7;
+ 
+  if (num == weekend)
+  {
+  Console.WriteLine("It's a holiday");
+  }
+  else
+  Console.WriteLine("It's not a holiday");
+  return weekend;
+}
+Console.Write("Enter a number from one to seven which will mean the day of the week: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if (number >= 1 && number <=7)
+    {
+        int thrDig = FindAHoliday(number);
+    }
+else
+{
+    Console.WriteLine("Error: There are only seven days in a week!");
+}
+
