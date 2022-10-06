@@ -123,8 +123,32 @@ else
 
 //Задача №2 Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
+int Find3thDigit(int num)
+{
+    int third;
+    while (num > 999)
+        num = num / 10;
+        third = num % 10;
+    return third;   
+}
+Console.Write("Enter a number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if (number < 0)
+{
+    number = number * -1;
+}
+if (number > 99)
+{
+    int thrDig = Find3thDigit(number);
+    Console.WriteLine("The 3th digit is " + thrDig);
+}
+else
+{
+    Console.WriteLine("Error: The entered number is missing the third number.");
+}
 
-// Задача №3 Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+
+/* Задача №3 Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
 int FindAHoliday(int num)
 {
@@ -148,4 +172,4 @@ else
 {
     Console.WriteLine("Error: There are only seven days in a week!");
 }
-
+*/
