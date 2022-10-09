@@ -177,7 +177,7 @@ else
 
 //Семинар 3 
 
-//Задача№1 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+/*Задача№1 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
 int FindPolindrom(int num)
 {
@@ -208,9 +208,29 @@ else
     Console.WriteLine($"Error: The entered number '{number}' is not five digits");
 }
 
-
-
+*/
 
 //Задача№2 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+
+double Range(double xa, double ya, double za, double xb, double yb, double zb)
+{
+    
+    return Math.Round(Math.Sqrt(Math.Pow((xb - xa),2) + Math.Pow((yb - ya),2) + Math.Pow((zb - za),2)),2);
+}
+Console.Write("Input xa-coordinate: ");
+double xa = Convert.ToDouble(Console.ReadLine());
+Console.Write("Inout ya-coordinate: ");
+double ya = Convert.ToDouble(Console.ReadLine());
+Console.Write("Input za-coordinate: ");
+double za = Convert.ToDouble(Console.ReadLine());
+Console.Write("Inout xb-coordinate: ");
+double xb = Convert.ToDouble(Console.ReadLine());
+Console.Write("Inout yb-coordinate: ");
+double yb = Convert.ToDouble(Console.ReadLine());
+Console.Write("Inout zb-coordinate: ");
+double zb = Convert.ToDouble(Console.ReadLine());
+
+
+Console.WriteLine(Range(xa, ya, za, xb, yb, zb));
 
 //Задача№3 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
