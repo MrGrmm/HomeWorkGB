@@ -210,7 +210,7 @@ else
 
 */
 
-//Задача№2 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+/*Задача№2 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
 double Range(double xa, double ya, double za, double xb, double yb, double zb)
 {
@@ -230,7 +230,21 @@ double yb = Convert.ToDouble(Console.ReadLine());
 Console.Write("Inout zb-coordinate: ");
 double zb = Convert.ToDouble(Console.ReadLine());
 
-
 Console.WriteLine(Range(xa, ya, za, xb, yb, zb));
 
+*/
+
 //Задача№3 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+void TableOfCubes(int num)
+{
+int count = 1;
+while(count <= num)
+    {
+        Console.WriteLine(Math.Pow(count,3));
+        count++;
+    }
+}
+Console.WriteLine("input N number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+TableOfCubes(number);
