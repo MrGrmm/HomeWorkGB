@@ -137,6 +137,7 @@ if (number < 0)
 {
     number = number * -1;
 }
+
 if (number > 99)
 {
     int thrDig = Find3thDigit(number);
@@ -177,6 +178,38 @@ else
 //Семинар 3 
 
 //Задача№1 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+
+int FindPolindrom(int num)
+{
+    if (num / 10000 != num % 10)
+    {
+        Console.WriteLine("Your number is not a polyndrom");
+        return num;
+    }
+    num = num / 10; 
+    num = num % 1000;
+      
+    if (num / 100 != num % 10)
+    {
+        Console.WriteLine("Your number is not a polyndrom");
+        return num;
+    }
+        Console.WriteLine("Your number is a polyndrom");
+        return num;
+}
+Console.WriteLine("Enter a five-digit number");
+int number = Convert.ToInt32(Console.ReadLine());
+if (number == number % 100000)
+{
+    int pol = FindPolindrom(number);
+}
+else
+{
+    Console.WriteLine($"Error: The entered number '{number}' is not five digits");
+}
+
+
+
 
 //Задача№2 Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 
