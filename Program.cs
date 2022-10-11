@@ -194,8 +194,8 @@ int FindPolindrom(int num)
         Console.WriteLine("Your number is not a polyndrom");
         return num;
     }
-        Console.WriteLine("Your number is a polyndrom");
-        return num;
+    Console.WriteLine("Your number is a polyndrom");
+    return num;
 }
 Console.WriteLine("Enter a five-digit number");
 int number = Convert.ToInt32(Console.ReadLine());
@@ -234,7 +234,7 @@ Console.WriteLine(Range(xa, ya, za, xb, yb, zb));
 
 */
 
-//Задача№3 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+/*Задача№3 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 
 void TableOfCubes(int num)
 {
@@ -248,3 +248,11 @@ while(count <= num)
 Console.WriteLine("input N number: ");
 int number = Convert.ToInt32(Console.ReadLine());
 TableOfCubes(number);
+
+*/
+
+//Семинар 4
+
+//Задача№1 Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+//Задача№2 Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+//Задача№3 Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
