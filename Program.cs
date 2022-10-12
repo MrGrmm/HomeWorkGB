@@ -254,5 +254,23 @@ TableOfCubes(number);
 //Семинар 4
 
 //Задача№1 Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+
+int PowA_B(int a, int b)
+{
+    int result = 1;
+    for(int i = 0; i < b; i++ )
+    
+        result = result * a;
+    
+    return result;
+}
+Console.WriteLine("Enter a natural number");
+int a1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the power to which you want to raise the entered number");
+int b1 = Convert.ToInt32(Console.ReadLine());
+int num = PowA_B(a1, b1);
+Console.WriteLine($"{a1} to the power of {b1} is {num}");
+
+
 //Задача№2 Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 //Задача№3 Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
