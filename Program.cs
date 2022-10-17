@@ -270,7 +270,7 @@ int num = PowA_B(a1, b1);
 Console.WriteLine($"{a1} to the power of {b1} is {num}");
 */
 
-//Задача№2 Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+/*Задача№2 Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
 int SumOfDigits(int num)
 {
@@ -282,14 +282,41 @@ int SumOfDigits(int num)
     }
     return sum;
 }
-Console.WriteLine("dsda");
+Console.WriteLine("Enter the number: ");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"Sum Of digits from a {n} is {SumOfDigits(n)}");
+*/     
+
+/*Задача№3 Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
 
 
+int[] CreateArray(int size)
+{
+    int[] array = new int[size];
+    Console.WriteLine("Creating array: ");
+    for(int i = 0; i < size; i++)
+    {
+        Console.WriteLine($"Enter the {i + 1} element of array: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    }
+    Console.WriteLine("Complete!");
+    return array;
+}
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        if (i == array.Length - 1)
+            Console.Write(array[i] + ". ");
+        else
+        Console.Write(array[i] + ", ");
 
+    Console.WriteLine();
+}
 
-           
-            
+Console.Write("Input a number of elements: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] myArray = CreateArray(size);
+ShowArray(myArray);
 
-//Задача№3 Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
+*/
+
