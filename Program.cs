@@ -322,7 +322,7 @@ ShowArray(myArray);
 
 //Семинар 5
 
-//Задача№1 Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+/*Задача№1 Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
 void ShowArray(int[] array)
 {
@@ -356,6 +356,45 @@ ShowArray(myArray);
 int evens = FindEvenNumbers(myArray);
 Console.WriteLine($"There are {evens} even numbers in this array");
 
+*/
+
 //Задача№2 Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
+void ShowArray(int[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+
+    Console.WriteLine();
+}
+int[] CreateRandomArray(int size, int minValue, int maxValue)
+{
+    int[] newArray = new int[size];
+
+    for(int i = 0; i < size; i++)
+        newArray[i] = new Random().Next(minValue, maxValue + 1);
+
+    return newArray;
+}
+int SumOfOddPosition(int[] array)
+{
+    int sum = 0;
+    for(int i = 1; i < array.Length; i += 2)
+        sum += array[i];
+    return sum;
+}
+
+Console.WriteLine("Enter the size of the array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] myArray = CreateRandomArray(size, 0, 10);
+ShowArray(myArray);
+int res = SumOfOddPosition(myArray);
+Console.WriteLine($"Sum of odd position in array = {res}");
+
 //Задача№3 Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+//Семинар 6
+
+//Задача№1 Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+//Решить без массива
+//Задача№2 Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
