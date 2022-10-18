@@ -355,10 +355,9 @@ int[] myArray = CreateRandomArray(size, 100, 1000);
 ShowArray(myArray);
 int evens = FindEvenNumbers(myArray);
 Console.WriteLine($"There are {evens} even numbers in this array");
-
 */
 
-//Задача№2 Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+/*Задача№2 Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
 void ShowArray(int[] array)
 {
@@ -390,8 +389,49 @@ int[] myArray = CreateRandomArray(size, 0, 10);
 ShowArray(myArray);
 int res = SumOfOddPosition(myArray);
 Console.WriteLine($"Sum of odd position in array = {res}");
+*/
 
-//Задача№3 Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+/*Задача№3 Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+double[] CreateRandomArray(int size)
+{
+    double[] newArray = new double[size];
+
+    for(int i = 0; i < size; i++)
+      newArray[i] = Math.Round(new Random().NextDouble(), 5);
+    
+    return newArray;
+}
+void ShowArray(double[] array)
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+
+    Console.WriteLine();
+}
+double DifferenceBetwenMaxAndMinElements (double[] array)
+{
+    double diff = 0;
+    double max = array[0];
+    double min = array[0];
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] > max)
+            max = array[i];
+        if(array[i] < min)
+            min = array[i];
+    }
+        diff = max - min;
+    return diff;
+}
+
+Console.WriteLine("Enter the size of the array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+double[] myArray = CreateRandomArray(size);
+ShowArray(myArray);
+double res = Math.Round(DifferenceBetwenMaxAndMinElements(myArray), 5);
+Console.WriteLine("The differens betwen maximal and miniman elements in array is  " + res);
+*/
 
 //Семинар 6
 
