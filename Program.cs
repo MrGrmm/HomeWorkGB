@@ -238,11 +238,11 @@ Console.WriteLine(Range(xa, ya, za, xb, yb, zb));
 
 void TableOfCubes(int num)
 {
-int count = 1;
-while(count <= num)
+int aboveZero = 1;
+while(aboveZero <= num)
     {
-        Console.WriteLine(Math.Pow(count,3));
-        count++;
+        Console.WriteLine(Math.Pow(aboveZero,3));
+        aboveZero++;
     }
 }
 Console.WriteLine("input N number: ");
@@ -269,6 +269,7 @@ int b1 = Convert.ToInt32(Console.ReadLine());
 int num = PowA_B(a1, b1);
 Console.WriteLine($"{a1} to the power of {b1} is {num}");
 */
+
 
 /*Задача№2 Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
@@ -342,11 +343,11 @@ int[] CreateRandomArray(int size, int minValue, int maxValue)
 }
 int FindEvenNumbers(int[] array)
 {
-    int count = 0;
+    int aboveZero = 0;
     for(int i = 0; i < array.Length; i++) 
         if (array[i] % 2 == 0)
-            count++; 
-    return count;
+            aboveZero++; 
+    return aboveZero;
 }
 
 Console.WriteLine("Enter the size of the array: ");
@@ -435,6 +436,36 @@ Console.WriteLine("The differens betwen maximal and miniman elements in array is
 
 //Семинар 6
 
-//Задача№1 Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-//Решить без массива
+//Задача№1 Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+/*Решить без массива
+
+void HowManyNumberThanZero (int size)
+{
+    int aboveZero = 0;
+    int count = 0;
+    while (count < size)
+    {
+        Console.WriteLine("Enter your number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+        if (num > 0)
+        {
+            aboveZero++;
+        }
+        count++;
+    }
+    Console.WriteLine($"You have entered {aboveZero} numbers greater than zero");
+}
+
+Console.WriteLine("Enter the desired number of rooms");
+int size = Convert.ToInt32(Console.ReadLine());
+HowManyNumberThanZero(size);
+*/
+
 //Задача№2 Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+
+
+
+
+
+
+
