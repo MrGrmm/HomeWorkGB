@@ -2,11 +2,11 @@
 /* Задача№1 Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 
 Console.Write("Input number 1: ");
-int n1 = Convert.ToInt32(Console.ReadLine());
+double n1 = Convert.Todouble32(Console.ReadLine());
 Console.Write("Input number 2: ");
-int n2 = Convert.ToInt32(Console.ReadLine());
-int max = 0;
-int min = 0;
+double n2 = Convert.Todouble32(Console.ReadLine());
+double max = 0;
+double min = 0;
 
 if (n1 > n2)
 {
@@ -26,12 +26,12 @@ Console.WriteLine("min number = " + min);
 /* Задача№2 Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
 
 Console.Write("Input first number: ");
-int n1 = Convert.ToInt32(Console.ReadLine());
+double n1 = Convert.Todouble32(Console.ReadLine());
 Console.Write("Input second number: ");
-int n2 = Convert.ToInt32(Console.ReadLine());
+double n2 = Convert.Todouble32(Console.ReadLine());
 Console.Write("Input the third number: ");
-int n3 = Convert.ToInt32(Console.ReadLine());
-int max = n1;
+double n3 = Convert.Todouble32(Console.ReadLine());
+double max = n1;
 
 if (n2 > n1)
 {
@@ -55,7 +55,7 @@ Console.Write("Maximal number is: " + max);
 /* Задача№3 Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
 
 Console.Write("Input first number: ");
-int num = Convert.ToInt32(Console.ReadLine());
+double num = Convert.Todouble32(Console.ReadLine());
 
 if (num % 2==1)
 {
@@ -72,8 +72,8 @@ else
 
 
 Console.Write("Write a positive number: ");
-int n = Convert.ToInt32(Console.ReadLine());
-int i = 1;
+double n = Convert.Todouble32(Console.ReadLine());
+double i = 1;
 
 if (n > 0)
 {    
@@ -97,21 +97,21 @@ else
 
 /* Задача№1 Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
 
-int FindSecondDigitOfThree(int num)
+double FindSecondDigitOfThree(double num)
 {   
-    int sec;
+    double sec;
 
-    int ed = num / 10;
+    double ed = num / 10;
     sec = ed % 10;
 
     return sec; 
 }
 
 Console.WriteLine("Tape a three-digit number ");
-int number = Convert.ToInt32(Console.ReadLine());
+double number = Convert.Todouble32(Console.ReadLine());
 if (number % 1000 == number && number / 100 != 0)
 {
-    int second = FindSecondDigitOfThree(number);
+    double second = FindSecondDigitOfThree(number);
     Console.WriteLine($"A second digit is: " + second);
 }
 else
@@ -123,16 +123,16 @@ else
 
 /*Задача №2 Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
-int Find3thDigit(int num)
+double Find3thDigit(double num)
 {
-    int third;
+    double third;
     while (num > 999)
         num = num / 10;
         third = num % 10;
     return third;   
 }
 Console.Write("Enter a number: ");
-int number = Convert.ToInt32(Console.ReadLine());
+double number = Convert.Todouble32(Console.ReadLine());
 if (number < 0)
 {
     number = number * -1;
@@ -140,7 +140,7 @@ if (number < 0)
 
 if (number > 99)
 {
-    int thrDig = Find3thDigit(number);
+    double thrDig = Find3thDigit(number);
     Console.WriteLine("The 3th digit is " + thrDig);
 }
 else
@@ -151,9 +151,9 @@ else
 
 /* Задача №3 Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
-int FindAHoliday(int num)
+double FindAHoliday(double num)
 {
-  int weekend = 6 & 7;
+  double weekend = 6 & 7;
  
   if (num == weekend)
   {
@@ -164,10 +164,10 @@ int FindAHoliday(int num)
   return weekend;
 }
 Console.Write("Enter a number from one to seven which will mean the day of the week: ");
-int number = Convert.ToInt32(Console.ReadLine());
+double number = Convert.Todouble32(Console.ReadLine());
 if (number >= 1 && number <=7)
     {
-        int thrDig = FindAHoliday(number);
+        double thrDig = FindAHoliday(number);
     }
 else
 {
@@ -179,7 +179,7 @@ else
 
 /*Задача№1 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
-int FindPolindrom(int num)
+double FindPolindrom(double num)
 {
     if (num / 10000 != num % 10)
     {
@@ -198,10 +198,10 @@ int FindPolindrom(int num)
     return num;
 }
 Console.WriteLine("Enter a five-digit number");
-int number = Convert.ToInt32(Console.ReadLine());
+double number = Convert.Todouble32(Console.ReadLine());
 if (number == number % 100000)
 {
-    int pol = FindPolindrom(number);
+    double pol = FindPolindrom(number);
 }
 else
 {
@@ -236,9 +236,9 @@ Console.WriteLine(Range(xa, ya, za, xb, yb, zb));
 
 /*Задача№3 Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 
-void TableOfCubes(int num)
+void TableOfCubes(double num)
 {
-int aboveZero = 1;
+double aboveZero = 1;
 while(aboveZero <= num)
     {
         Console.WriteLine(Math.Pow(aboveZero,3));
@@ -246,7 +246,7 @@ while(aboveZero <= num)
     }
 }
 Console.WriteLine("input N number: ");
-int number = Convert.ToInt32(Console.ReadLine());
+double number = Convert.Todouble32(Console.ReadLine());
 TableOfCubes(number);
 
 */
@@ -255,27 +255,27 @@ TableOfCubes(number);
 
 /*Задача№1 Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
 
-int PowA_B(int a, int b)
+double PowA_B(double a, double b)
 {
-    int result = 1;
-    for(int i = 0; i < b; i++)    
+    double result = 1;
+    for(double i = 0; i < b; i++)    
         result = result * a;    
     return result;
 }
 Console.WriteLine("Enter a natural number");
-int a1 = Convert.ToInt32(Console.ReadLine());
+double a1 = Convert.Todouble32(Console.ReadLine());
 Console.WriteLine("Enter the power to which you want to raise the entered number");
-int b1 = Convert.ToInt32(Console.ReadLine());
-int num = PowA_B(a1, b1);
+double b1 = Convert.Todouble32(Console.ReadLine());
+double num = PowA_B(a1, b1);
 Console.WriteLine($"{a1} to the power of {b1} is {num}");
 */
 
 
 /*Задача№2 Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-int SumOfDigits(int num)
+double SumOfDigits(double num)
 {
-    int sum = 0;
+    double sum = 0;
     while (num > 0)
     {
         sum += num % 10;
@@ -284,28 +284,28 @@ int SumOfDigits(int num)
     return sum;
 }
 Console.WriteLine("Enter the number: ");
-int n = Convert.ToInt32(Console.ReadLine());
+double n = Convert.Todouble32(Console.ReadLine());
 Console.WriteLine($"Sum Of digits from a {n} is {SumOfDigits(n)}");
 */     
 
 /*Задача№3 Напишите программу, которая задаёт массив из m элементов и выводит их на экран.
 
 
-int[] CreateArray(int size)
+double[] CreateArray(double size)
 {
-    int[] array = new int[size];
+    double[] array = new double[size];
     Console.WriteLine("Creating array: ");
-    for(int i = 0; i < size; i++)
+    for(double i = 0; i < size; i++)
     {
         Console.WriteLine($"Enter the {i + 1} element of array: ");
-        array[i] = Convert.ToInt32(Console.ReadLine());
+        array[i] = Convert.Todouble32(Console.ReadLine());
     }
     Console.WriteLine("Complete!");
     return array;
 }
-void ShowArray(int[] array)
+void ShowArray(double[] array)
 {
-    for(int i = 0; i < array.Length; i++)
+    for(double i = 0; i < array.Length; i++)
         if (i == array.Length - 1)
             Console.Write(array[i] + ". ");
         else
@@ -315,8 +315,8 @@ void ShowArray(int[] array)
 }
 
 Console.Write("Input a number of elements: ");
-int size = Convert.ToInt32(Console.ReadLine());
-int[] myArray = CreateArray(size);
+double size = Convert.Todouble32(Console.ReadLine());
+double[] myArray = CreateArray(size);
 ShowArray(myArray);
 
 */
@@ -325,87 +325,87 @@ ShowArray(myArray);
 
 /*Задача№1 Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
-void ShowArray(int[] array)
+void ShowArray(double[] array)
 {
-    for(int i = 0; i < array.Length; i++)
+    for(double i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
 
     Console.WriteLine();
 }
-int[] CreateRandomArray(int size, int minValue, int maxValue)
+double[] CreateRandomArray(double size, double minValue, double maxValue)
 {
-    int[] newArray = new int[size];
+    double[] newArray = new double[size];
 
-    for(int i = 0; i < size; i++)
+    for(double i = 0; i < size; i++)
         newArray[i] = new Random().Next(minValue, maxValue + 1);
 
     return newArray;
 }
-int FindEvenNumbers(int[] array)
+double FindEvenNumbers(double[] array)
 {
-    int aboveZero = 0;
-    for(int i = 0; i < array.Length; i++) 
+    double aboveZero = 0;
+    for(double i = 0; i < array.Length; i++) 
         if (array[i] % 2 == 0)
             aboveZero++; 
     return aboveZero;
 }
 
 Console.WriteLine("Enter the size of the array: ");
-int size = Convert.ToInt32(Console.ReadLine());
-int[] myArray = CreateRandomArray(size, 100, 1000);
+double size = Convert.Todouble32(Console.ReadLine());
+double[] myArray = CreateRandomArray(size, 100, 1000);
 ShowArray(myArray);
-int evens = FindEvenNumbers(myArray);
+double evens = FindEvenNumbers(myArray);
 Console.WriteLine($"There are {evens} even numbers in this array");
 */
 
 /*Задача№2 Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
-void ShowArray(int[] array)
+void ShowArray(double[] array)
 {
-    for(int i = 0; i < array.Length; i++)
+    for(double i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
 
     Console.WriteLine();
 }
-int[] CreateRandomArray(int size, int minValue, int maxValue)
+double[] CreateRandomArray(double size, double minValue, double maxValue)
 {
-    int[] newArray = new int[size];
+    double[] newArray = new double[size];
 
-    for(int i = 0; i < size; i++)
+    for(double i = 0; i < size; i++)
         newArray[i] = new Random().Next(minValue, maxValue + 1);
 
     return newArray;
 }
-int SumOfOddPosition(int[] array)
+double SumOfOddPosition(double[] array)
 {
-    int sum = 0;
-    for(int i = 1; i < array.Length; i += 2)
+    double sum = 0;
+    for(double i = 1; i < array.Length; i += 2)
         sum += array[i];
     return sum;
 }
 
 Console.WriteLine("Enter the size of the array: ");
-int size = Convert.ToInt32(Console.ReadLine());
-int[] myArray = CreateRandomArray(size, 0, 10);
+double size = Convert.Todouble32(Console.ReadLine());
+double[] myArray = CreateRandomArray(size, 0, 10);
 ShowArray(myArray);
-int res = SumOfOddPosition(myArray);
+double res = SumOfOddPosition(myArray);
 Console.WriteLine($"Sum of odd position in array = {res}");
 */
 
 /*Задача№3 Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
-double[] CreateRandomArray(int size)
+double[] CreateRandomArray(double size)
 {
     double[] newArray = new double[size];
 
-    for(int i = 0; i < size; i++)
+    for(double i = 0; i < size; i++)
       newArray[i] = Math.Round(new Random().NextDouble(), 5);
     
     return newArray;
 }
 void ShowArray(double[] array)
 {
-    for(int i = 0; i < array.Length; i++)
+    for(double i = 0; i < array.Length; i++)
         Console.Write(array[i] + " ");
 
     Console.WriteLine();
@@ -415,7 +415,7 @@ double DifferenceBetwenMaxAndMinElements (double[] array)
     double diff = 0;
     double max = array[0];
     double min = array[0];
-    for(int i = 0; i < array.Length; i++)
+    for(double i = 0; i < array.Length; i++)
     {
         if(array[i] > max)
             max = array[i];
@@ -427,7 +427,7 @@ double DifferenceBetwenMaxAndMinElements (double[] array)
 }
 
 Console.WriteLine("Enter the size of the array: ");
-int size = Convert.ToInt32(Console.ReadLine());
+double size = Convert.Todouble32(Console.ReadLine());
 double[] myArray = CreateRandomArray(size);
 ShowArray(myArray);
 double res = Math.Round(DifferenceBetwenMaxAndMinElements(myArray), 5);
@@ -439,14 +439,14 @@ Console.WriteLine("The differens betwen maximal and miniman elements in array is
 //Задача№1 Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 /*Решить без массива
 
-void HowManyNumberThanZero (int size)
+void HowManyNumberThanZero (double size)
 {
-    int aboveZero = 0;
-    int count = 0;
+    double aboveZero = 0;
+    double count = 0;
     while (count < size)
     {
         Console.WriteLine("Enter your number: ");
-        int num = Convert.ToInt32(Console.ReadLine());
+        double num = Convert.Todouble32(Console.ReadLine());
         if (num > 0)
         {
             aboveZero++;
@@ -456,14 +456,33 @@ void HowManyNumberThanZero (int size)
     Console.WriteLine($"You have entered {aboveZero} numbers greater than zero");
 }
 
-Console.WriteLine("Enter the desired number of rooms");
-int size = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter coordinates ");
+double size = Convert.Todouble32(Console.ReadLine());
 HowManyNumberThanZero(size);
 */
 
 //Задача№2 Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 
-
+void FindTheIntersection(double b1, double k1, double b2, double k2)
+{
+    if (k1 == k2) Console.WriteLine("Прямые паралельны, точка пересечения отсутствует.");
+    else
+    {
+        double x = Math.Round((b1 - b2) / (k2 - k1),3);
+        double y = Math.Round(k2 * x + b2, 3);
+        Console.WriteLine("Coordinates of the point of intersection of lines: ");
+        Console.WriteLine($"x:{x}; y:{y}");
+    }
+}
+Console.WriteLine("Enter coordinates b1: ");
+double b1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter coordinates k1: ");
+double k1 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter coordinates b2: ");
+double b2 = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter coordinates k2: ");
+double k2 = Convert.ToDouble(Console.ReadLine());
+FindTheIntersection(b1, k1, b2, k2);
 
 
 
