@@ -577,7 +577,7 @@ Console.Write("Input an index 'j' of element: ");      //запрашиваем 
 int j = Convert.ToInt32(Console.ReadLine());        //присваиваем к переменной
 IndexSearch(my2dArray, i, j);      //вызываем меток для поиски эллемента по индексу и отправляем туда массив и позицию эллемента
 */
-//Задача№3 Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+/*Задача№3 Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
 int[,] CreateRandom2dArray()    //создаст двумерный массив
 {
@@ -643,4 +643,202 @@ Show2dArray(my2dArray);     //вызов метода что покажет дв
 Console.WriteLine();    //переход на новую строку
 double[] arifmet = Arifm(my2dArray);    //вызов метода для поиска ср.арифм
 ShowArray(arifmet);     //вызов метода что покажет одномерный массив с ср.арифм каждого столюца из двумерного массива
+*/
 
+//Семинар 8
+
+/*Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of colums: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array2d = new int[rows,columns];
+    
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array2d[i,j] = new Random().Next(minValue, maxValue + 1);
+    
+    return array2d;
+}
+
+void Show2dArray(int[,] array2d)
+{
+    for(int i = 0; i < array2d.GetLength(0); i++)
+    {
+        for(int j = 0; j < array2d.GetLength(1); j++)
+            Console.Write(array2d[i,j] + " ");
+
+        Console.WriteLine();
+    }
+}
+
+void Sorted2DArray(int[,] array2d)
+{       
+    for(int i = 0; i < array2d.GetLength(0); i++)
+        for(int j = 0; j < array2d.GetLength(1); j++)        
+            for(int k = 0; k < array2d.GetLength(0) - j - 1; k++)
+            {
+                if (array2d[i,k] < array2d[i, k+1])
+                {
+                    int temp = array2d[i,k];
+                    array2d[i,k] = array2d[i,k+1];
+                    array2d[i,k+1] = temp;
+                }
+            }        
+}
+
+int[,] my2DArray = CreateRandom2dArray();
+Show2dArray(my2DArray);
+Sorted2DArray(my2DArray);
+Console.WriteLine("Seichas budet proizvoditsa rabota po sortirovke po ubivaniiu kajdoi stroki");
+Show2dArray(my2DArray);
+*/
+
+/*Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of colums: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array2d = new int[rows,columns];
+    
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array2d[i,j] = new Random().Next(minValue, maxValue + 1);
+    
+    return array2d;
+}
+
+void Show2dArray(int[,] array2d)
+{
+    for(int i = 0; i < array2d.GetLength(0); i++)
+    {
+        for(int j = 0; j < array2d.GetLength(1); j++)
+            Console.Write(array2d[i,j] + " ");
+
+        Console.WriteLine();
+    }
+}
+
+void ShowArray(int[] array)     //объявление метода что покажет весь массив в консоли, принимает на вход сам массив
+{
+    for(int i = 0; i < array.Length; i++)   //создание цикла что будет проходится по массиву и печатать его
+        if (i == array.Length - 1)  //если индекс равен размеру массива - 1(так как индекс считается с 0 и максимальный индекс всегда на 1 меньше размера массива) то 
+            Console.Write(array[i] + ". ");     //печатаем точку после самого эллемента
+        else    //если нет то
+        Console.Write(array[i] + ", ");     //печатаем запятум после самого числа    
+}
+
+void FindMinSumInRows(int[,] array2d)
+{
+    int[] sum = new int[array2d.GetLength(0)];            
+    
+    for(int i = 0, m = 0; i < array2d.GetLength(0); i++)
+    {
+        int summ = 0; 
+        
+        for(int j = 0; j < array2d.GetLength(1); j++)   
+        
+            summ += array2d[i,j];
+            sum[m] = summ;            
+            m++;    
+                                       
+    }
+    int minSum = sum[0];
+    int nMinSum = 0;
+        for(int n = 0; n < sum.GetLength(0); n++)
+        {
+            if (sum[n] < minSum)   
+            nMinSum = n;
+            minSum = sum[n];
+            
+        }
+        ShowArray(sum);
+        Console.WriteLine();
+        Console.WriteLine("stroka s naimenishei summoi allementov eto stroka pod indeksom:  " + nMinSum);
+        
+        
+}   
+int[,] my2dArray = CreateRandom2dArray();
+Show2dArray(my2dArray);
+FindMinSumInRows(my2dArray);
+*/
+
+//Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+
+int[,] CreateRandom2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of colums: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,] array2d = new int[rows,columns];
+    
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            array2d[i,j] = new Random().Next(minValue, maxValue + 1);
+    
+    return array2d;
+}
+
+void Show2dArray(int[,] array2d)
+{
+    for(int i = 0; i < array2d.GetLength(0); i++)
+    {
+        for(int j = 0; j < array2d.GetLength(1); j++)
+            Console.Write(array2d[i,j] + " ");
+
+        Console.WriteLine();
+    }
+}
+
+int[,] Matrix(int[,] array2dA, int[,] array2dB)
+{
+    int[,] array2dC = new int[array2dA.GetLength(0), array2dB.GetLength(1)];
+        if (array2dA.GetLength(1) == array2dB.GetLength(0))
+        {    
+            for(int i = 0; i < array2dA.GetLength(0); i++)
+                for(int j = 0; j < array2dA.GetLength(1); j++)
+                    for(int k = 0; k < array2dB.GetLength(0); k++) 
+                    {
+                        array2dC[i,j] += array2dA[i,k] * array2dB[k,j];
+                    }       
+        }
+        else
+        {
+            Console.WriteLine ("Error");
+        }            
+
+    return array2dC;
+}
+
+int[,] arrayA = CreateRandom2dArray();
+int[,] arrayB = CreateRandom2dArray();
+Show2dArray(arrayA);
+Console.WriteLine();
+Show2dArray(arrayB);
+int[,] arrayC = Matrix(arrayA, arrayB);
+Show2dArray(arrayC);
+//Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+
+//Напишите программу, которая заполнит спирально массив 4 на 4.
