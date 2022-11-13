@@ -839,6 +839,46 @@ Console.WriteLine();
 Show2dArray(arrayB);
 int[,] arrayC = Matrix(arrayA, arrayB);
 Show2dArray(arrayC);
-//Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
 
+
+/*Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+
+int[,,] CreateRandom3DArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of colums: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of volume: ");
+    int volume = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a min possible value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a max possible value: ");
+    int maxValue = Convert.ToInt32(Console.ReadLine());
+
+    int[,,] array3d = new int[rows,columns,volume];
+    
+    
+   
+    for (int i = 0; i < rows; i++)
+        for (int j = 0; j < columns; j++)
+            for (int k = 0; k < volume; k++)
+            
+            array3d[i,j,k] = new Random().Next(minValue, maxValue + 1);
+
+    return array3d;
+}
+
+void Show3dArray(int[,,] array3d)
+{
+    for(int i = 0; i < array3d.GetLength(0); i++)
+        for(int j = 0; j < array3d.GetLength(1); j++)
+            for(int k = 0; k < array3d.GetLength(2); k++)
+                Console.Write($"{array3d[i,j,k]} ");
+                    Console.WriteLine();
+                    
+}
+int[,,] my3Darray = CreateRandom3DArray();
+Show3dArray(my3Darray);
+*/
 //Напишите программу, которая заполнит спирально массив 4 на 4.
