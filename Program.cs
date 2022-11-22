@@ -779,7 +779,7 @@ Show2dArray(my2dArray);
 FindMinSumInRows(my2dArray);
 */
 
-//Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+/*Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
 int[,] CreateRandom2dArray()
 {
@@ -838,47 +838,165 @@ Show2dArray(arrayA);
 Console.WriteLine();
 Show2dArray(arrayB);
 int[,] arrayC = Matrix(arrayA, arrayB);
+Console.WriteLine();
 Show2dArray(arrayC);
+*/
 
-
-/*Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
-
+//Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+/*
 int[,,] CreateRandom3DArray()
 {
+    Console.Write("Input a number of volume: ");
+    int volume = Convert.ToInt32(Console.ReadLine()); 
     Console.Write("Input a number of rows: ");
     int rows = Convert.ToInt32(Console.ReadLine());
     Console.Write("Input a number of colums: ");
     int columns = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a number of volume: ");
-    int volume = Convert.ToInt32(Console.ReadLine());
     Console.Write("Input a min possible value: ");
     int minValue = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Input a max possible value: ");
-    int maxValue = Convert.ToInt32(Console.ReadLine());
 
-    int[,,] array3d = new int[rows,columns,volume];
+
+    int[,,] array3d = new int[volume,rows,columns];
     
     
    
-    for (int i = 0; i < rows; i++)
-        for (int j = 0; j < columns; j++)
-            for (int k = 0; k < volume; k++)
-            
-            array3d[i,j,k] = new Random().Next(minValue, maxValue + 1);
-
+    for (int i = 0; i < volume; i++)
+        for (int j = 0; j < rows; j++)
+            for (int k = 0; k < columns; k++)
+            {
+            array3d[i,j,k] = minValue;
+            minValue++;
+            }
     return array3d;
 }
 
 void Show3dArray(int[,,] array3d)
 {
     for(int i = 0; i < array3d.GetLength(0); i++)
+    {
+        Console.WriteLine("Page №" + (i+1));
+       
         for(int j = 0; j < array3d.GetLength(1); j++)
+        {
             for(int k = 0; k < array3d.GetLength(2); k++)
-                Console.Write($"{array3d[i,j,k]} ");
-                    Console.WriteLine();
-                    
+                {
+                Console.Write(array3d[i,j,k] + " ");
+                }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+        Console.WriteLine();
+    }
 }
 int[,,] my3Darray = CreateRandom3DArray();
 Show3dArray(my3Darray);
+
 */
-//Напишите программу, которая заполнит спирально массив 4 на 4.
+
+/*Напишите программу, которая заполнит спирально массив 4 на 4.
+
+int[,] CreateSquareSpiral2dArray()
+{
+    Console.Write("Input a number of rows: ");
+    int rows = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Input a number of colums: ");
+    int columns = Convert.ToInt32(Console.ReadLine());
+    int dif;
+    if(rows > columns) dif = rows - columns;
+    else dif = columns - rows;
+    Console.Write("Input a min Value: ");
+    int minValue = Convert.ToInt32(Console.ReadLine());
+    int[,] array = new int[rows, columns];
+    
+    int number = 1;
+    int i = 0;
+    int j = 0;
+    if (rows != columns)
+    {
+        Console.WriteLine("Error");
+        return array;
+    }  
+    else
+        while (number <= array.GetLength(0) * array.GetLength(1))
+        {
+        array[i, j] = minValue;
+        minValue++;
+        number++;
+        if (i <= j + 1 && i + j < array.GetLength(1) - 1)
+            j++;
+        else if (i + dif < j && i + j >= array.GetLength(0) - 1)
+            i++;
+        else if (i + dif >= j && i + j + dif > array.GetLength(1) - 1)
+            j--;
+        else
+            i--;
+        }
+        return array;    
+    
+}
+
+
+void Show2dArray(int[,] array2d)
+{
+    for(int i = 0; i < array2d.GetLength(0); i++)
+    {
+        for(int j = 0; j < array2d.GetLength(1); j++)
+            Console.Write(array2d[i,j] + " ");
+
+        Console.WriteLine();
+    }
+}
+
+int[,] my2dArray = CreateSquareSpiral2dArray();
+Show2dArray(my2dArray);
+
+*/
+
+
+//Семинар 8
+
+// Задача №1 Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. 
+// Выполнить с помощью рекурсии.
+/*
+void ShowNums(int n)
+{
+    Console.Write(n + " ");
+    if(n > 1) ShowNums(n - 1);
+}
+Console.WriteLine("get a num");
+int num = Convert.ToInt32(Console.ReadLine());
+if (num > 0)
+ShowNums(num);
+else
+Console.WriteLine("Error");
+*/
+//Задача№2 Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+/*
+int SumOfNums(int m, int n)
+{
+    if(m > n) return m + SumOfNums(m - 1, n);
+    if(n > m) return n + SumOfNums(m, n - 1);
+    else return m;
+}
+Console.WriteLine("Input the number 'n'");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input the number 'm'");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(SumOfNums(n, m));
+*/
+
+//Задача№3 Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+
+int AckermannFunction(int m, int n)
+{
+    if(m == 0) return n = n + 1;
+    if(m > 0 && n == 0) return AckermannFunction(m - 1, 1);
+    if(m > 0 && n > 0) return AckermannFunction(m - 1, AckermannFunction(m, n - 1));
+    else return 0;
+}
+
+Console.WriteLine("Input the number 'n'");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Input the number 'm'");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(AckermannFunction(n, m));
